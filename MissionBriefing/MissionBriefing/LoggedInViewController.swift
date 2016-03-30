@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import CoreMotion
 
 class LoggedInViewController: UIViewController {
     
     var imageView = UIImageView()
     var imageFrame = CGRect()
     var num = 0
+    
+    var animator:UIDynamicAnimator? = nil;
+    let gravity = UIGravityBehavior()
+    let collider = UICollisionBehavior()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,27 @@ class LoggedInViewController: UIViewController {
         self.imageFrame = self.imageView.frame
         
         print(imageFrame)
+        
+        
+    }
+    
+    func createAnimatorStuff() {
+        
+        animator = UIDynamicAnimator(referenceView:self.view);
+        
+        gravity.addItem(imageView);
+        gravity.gravityDirection = CGVectorMake(0, 0.8)
+        animator?.addBehavior(gravity)
+        
+        collider.addItem(imageView)
+        collider.translatesReferenceBoundsIntoBoundary = true
+        animator?.addBehavior(collider)
+        
+        if self.imageView.center.y > 1000 {
+            
+            self.imageView.center.y = -66
+            
+        }
         
         
     }
@@ -57,7 +83,7 @@ class LoggedInViewController: UIViewController {
             UIView.animateWithDuration(0.5, animations: {
                 
                 self.imageView.transform = CGAffineTransformMakeScale(1, 1)
-                
+                self.imageView.center = self.view.center
             })
         }
     }
@@ -73,65 +99,32 @@ class LoggedInViewController: UIViewController {
                     
                     self.imageView.transform = CGAffineTransformIdentity
                     
+                    self.imageView.center = self.view.center
                 })
         })
         
     }
     
+    
+    // MARK: - Get Sik
     func getSik() {
         UIView.animateWithDuration(1, animations: {
             
-            self.imageView.frame = CGRect(x: 0, y: 0, width: self.imageView.frame.width, height: self.imageView.frame.height)
+            self.imageView.frame = CGRect(x: self.view.center.x - self.imageView.frame.width / 2, y: 0, width: self.imageView.frame.width, height: self.imageView.frame.height)
             
         }) { (animated) in
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(1, animations: {
                 
-                self.smallRotate(90)
+             self.createAnimatorStuff()
                 
-            })
-        }
-    }
-    
-    func droppinIn() {
-        UIView.animateWithDuration(2, animations: {
-            
-            let viewFrame = self.view.frame
-            self.imageView.center = CGPoint(x: self.imageView.center.x, y: viewFrame.height - 244)
-            
-        }) { (animated) in
-            
-            self.smallRotate(0)
-            self.imageView.center = self.view.center
-            
-        }
-    }
-    
-    
-    
-    func takeOff() {
-        
-        
-        UIView.animateWithDuration(1, animations: {
-            
-            
-            self.imageView.center = CGPoint(x: 150, y: 150)
-            
-        })
-        
-    }
-    
-    
-    func smallRotate(degrees: CGFloat) {
-        UIView.animateWithDuration(0.5, animations: {
-            self.imageView.transform = CGAffineTransformMakeRotation(degrees)
-        }) { (animated) in
-             if self.num == 0 {
-                
-            self.droppinIn()
-                self.num = 1
-            
+            }) { (animated) in
+                UIView.animateWithDuration(1, animations: {
+                    
+                    self.imageView.center = self.view.center
+                })
             }
-            
         }
     }
+    
+    
 }

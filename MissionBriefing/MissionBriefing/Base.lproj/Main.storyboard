@@ -37,8 +37,8 @@
                                     <action selector="AuthenticateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lX-Lc-viR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reO-DI-h5n">
-                                <rect key="frame" x="61" y="199" width="480" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reO-DI-h5n">
+                                <rect key="frame" x="61" y="800" width="480" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -80,6 +80,7 @@
                             <constraint firstItem="orS-WZ-LUl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="YxV-vb-3lG"/>
                             <constraint firstItem="reO-DI-h5n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="ddU-sm-GV9"/>
                             <constraint firstItem="UP8-v1-1t7" firstAttribute="top" secondItem="0Q3-52-zdH" secondAttribute="bottom" constant="8" id="e84-Wu-zmv"/>
+                            <constraint firstItem="reO-DI-h5n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="500" id="erC-AR-Gtm"/>
                             <constraint firstItem="AZ2-oi-tju" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="h9X-xJ-3vf"/>
                             <constraint firstItem="0Q3-52-zdH" firstAttribute="top" secondItem="reO-DI-h5n" secondAttribute="bottom" constant="8" id="hSm-L4-12H"/>
                             <constraint firstItem="AZ2-oi-tju" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iak-MN-JVA"/>
@@ -95,12 +96,12 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Pvz-FW-4PJ"/>
+                                <exclude reference="0Pc-qW-4iz"/>
+                                <exclude reference="ssB-BS-GPa"/>
                                 <exclude reference="GOC-8V-n9u"/>
                                 <exclude reference="hSm-L4-12H"/>
                                 <exclude reference="mD0-TB-8ug"/>
                                 <exclude reference="zcB-IG-J1J"/>
-                                <exclude reference="0Pc-qW-4iz"/>
-                                <exclude reference="ssB-BS-GPa"/>
                                 <exclude reference="t9u-Sl-vSW"/>
                             </mask>
                         </variation>
@@ -112,6 +113,7 @@
                         <outlet property="TIYLogo" destination="UP8-v1-1t7" id="2Dv-C8-mJj"/>
                         <outlet property="authenticationButton" destination="0Q3-52-zdH" id="0hx-SX-GuV"/>
                         <outlet property="greetingLabel" destination="reO-DI-h5n" id="cdM-Wr-xpW"/>
+                        <outlet property="greetingLabelConstraint" destination="erC-AR-Gtm" id="0tb-Z6-1h3"/>
                         <outlet property="nameTextField" destination="orS-WZ-LUl" id="kMy-mQ-auW"/>
                         <outlet property="passwordTextField" destination="AZ2-oi-tju" id="6hH-QJ-8et"/>
                         <segue destination="z5A-cv-pLj" kind="show" identifier="LoggedInSegue" id="76O-af-rar"/>

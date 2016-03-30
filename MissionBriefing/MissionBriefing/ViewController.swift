@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var greetingLabelConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var authenticationButton: UIButton!
     
     @IBOutlet weak var greetingLabel: UILabel!
@@ -75,6 +77,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             greetingLabel.text = "Good evening, agent \(agentLastName)"
             
             self.view.backgroundColor = UIColor.greenColor()
+            
+            self.showTextField()
             
             self.moveImage(TIYLogo)
             
@@ -153,6 +157,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.AuthenticateButton.frame = CGRectMake(authenticateFrame.origin.x - authenticateFrame.width / 2 - 4, authenticateFrame.origin.y, authenticateFrame.width, authenticateFrame.height)
             self.LoginButton.frame = CGRectMake(loginFrame.origin.x + loginFrame.width / 2 + 4, authenticateFrame.origin.y, loginFrame.width, loginFrame.height)
             
+        })
+        
+    }
+    
+    
+    func showTextField() {
+        self.greetingLabelConstraint.constant = 500
+        UIView.animateWithDuration(2, animations: {
+            self.greetingLabelConstraint.constant = 244
+            self.view.layoutIfNeeded()
         })
         
     }
