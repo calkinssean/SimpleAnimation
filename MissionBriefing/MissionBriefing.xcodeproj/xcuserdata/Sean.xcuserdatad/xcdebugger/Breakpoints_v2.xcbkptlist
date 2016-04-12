@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MissionBriefing/ViewController.swift"
-            timestampString = "480981887.614188"
+            timestampString = "481060333.494159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "AuthenticateButton(_:)"
             landmarkType = "5">
          </BreakpointContent>

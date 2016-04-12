@@ -11,14 +11,17 @@ import CoreMotion
 
 class LoggedInViewController: UIViewController {
     
+    //properties
     var imageView = UIImageView()
     var imageFrame = CGRect()
     var num = 0
     
+    //animator and animation behaviors
     var animator:UIDynamicAnimator? = nil;
     let gravity = UIGravityBehavior()
     let collider = UICollisionBehavior()
     
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +35,9 @@ class LoggedInViewController: UIViewController {
         
         print(imageFrame)
         
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action:#selector(self.nextTapped))
     }
-    
+    //MARK: - UIDynamicAnimator
     func createAnimatorStuff() {
         
         animator = UIDynamicAnimator(referenceView:self.view);
@@ -87,7 +90,7 @@ class LoggedInViewController: UIViewController {
             })
         }
     }
-    
+    //MARK: - Do flip animation
     func doFlip() {
         
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2,
@@ -106,7 +109,7 @@ class LoggedInViewController: UIViewController {
     }
     
     
-    // MARK: - Get Sik
+    //MARK: - Get Sik
     func getSik() {
         UIView.animateWithDuration(1, animations: {
             
@@ -125,6 +128,8 @@ class LoggedInViewController: UIViewController {
             }
         }
     }
-    
+    func nextTapped() {
+        performSegueWithIdentifier("nextTappedSegue", sender: self)
+    }
     
 }

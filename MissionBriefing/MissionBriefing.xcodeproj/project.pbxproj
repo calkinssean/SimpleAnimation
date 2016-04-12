@@ -13,6 +13,7 @@
 		14128BCA1C628E41004C7E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14128BC91C628E41004C7E03 /* Assets.xcassets */; };
 		14128BCD1C628E41004C7E03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14128BCB1C628E41004C7E03 /* LaunchScreen.storyboard */; };
 		14AEA26D1CAA2EE200DDDEE1 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AEA26C1CAA2EE200DDDEE1 /* LoggedInViewController.swift */; };
+		14F060EA1CAC2BD1008015A5 /* ExplodingFacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F060E91CAC2BD1008015A5 /* ExplodingFacesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		14128BCC1C628E41004C7E03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14128BCE1C628E41004C7E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14AEA26C1CAA2EE200DDDEE1 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
+		14F060E91CAC2BD1008015A5 /* ExplodingFacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplodingFacesViewController.swift; path = ../ExplodingFacesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				14128BC21C628E41004C7E03 /* AppDelegate.swift */,
 				14128BC41C628E41004C7E03 /* ViewController.swift */,
 				14AEA26C1CAA2EE200DDDEE1 /* LoggedInViewController.swift */,
+				14F060E91CAC2BD1008015A5 /* ExplodingFacesViewController.swift */,
 				14128BC61C628E41004C7E03 /* Main.storyboard */,
 				14128BC91C628E41004C7E03 /* Assets.xcassets */,
 				14128BCB1C628E41004C7E03 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F060EA1CAC2BD1008015A5 /* ExplodingFacesViewController.swift in Sources */,
 				14AEA26D1CAA2EE200DDDEE1 /* LoggedInViewController.swift in Sources */,
 				14128BC51C628E41004C7E03 /* ViewController.swift in Sources */,
 				14128BC31C628E41004C7E03 /* AppDelegate.swift in Sources */,

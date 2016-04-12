@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    
+    //MARK: - Outlets
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,10 +28,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var LoginButton: UIButton!
     
+    //view life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //self.performSegueWithIdentifier("LoggedInSegue", sender: self)
         print("view did load")
         
     }
@@ -43,12 +46,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.text = ""
         
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
+
+    //MARK: - Text field delegate method
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == nameTextField {
             passwordTextField.becomeFirstResponder()
@@ -61,6 +60,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    //MARK: - Login button action
+    //Login verification
     @IBAction func AuthenticateButton(sender: AnyObject) {
         var agentLastName = ""
         self.AuthenticateButton.transform = CGAffineTransformIdentity
@@ -82,12 +83,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             self.moveImage(TIYLogo)
             
-            
         } else {
             greetingLabel.text = "Access Denied"
             self.view.backgroundColor = UIColor.redColor()
         }
     }
+    
+    //MARK: - TIY logo animation
     func scaleImage(image: UIImageView) {
         UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 2, options: [], animations: {
             
@@ -100,20 +102,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    @IBAction func loginTapped(sender: UIButton) {
-        
-        self.performSegueWithIdentifier("LoggedInSegue", sender: self)
-        
-    }
-    
-    
     func moveImage(image: UIImageView) {
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animateWithDuration(1, animations: {
             
-            self.TIYLogo.transform = CGAffineTransformMakeScale(2, 2)
+            self.TIYLogo.transform = CGAffineTransformMakeScale(10, 10)
+            self.TIYLogo.alpha = 0
             
         }) { (animated) in
             
+            self.performSegueWithIdentifier("LoggedInSegue", sender: self)
+
             
             UIView.animateWithDuration(0.5, animations: {
                 
@@ -168,6 +166,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.greetingLabelConstraint.constant = 244
             self.view.layoutIfNeeded()
         })
+        
+    }
+    
+    @IBAction func loginTapped(sender: UIButton) {
+        
+        self.performSegueWithIdentifier("LoggedInSegue", sender: self)
         
     }
     
